@@ -2,12 +2,13 @@
 
 body {
     background-color: #aaaaaa;
+    margin: 0;
 }
 
 #content {
     max-width: 900px;
     padding: 30px;
-    margin: 50px auto;
+    margin: 0 auto;
     background-color: white;
 }
 
@@ -69,8 +70,9 @@ nav ul li {
     text-align: center;
 }
 
-.main-header span {
-    font-size: 2em;
+.main-header h1 {
+    font-size: 3.5em;
+    margin: 10px 0;
 }
 
 .proclamation-section {
@@ -99,7 +101,7 @@ nav ul li {
 
 .section-paragraph {
     align-self: center;
-    font-size: 1.2em;
+    font-size: 1.3rem;
 }
 
 .main-footer p {
@@ -174,15 +176,18 @@ footer p {
 /* Style the back side */
 .flip-card-back {
     background-color: dodgerblue;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     color: white;
     transform: rotateY(180deg);
     border-radius: inherit;
+    justify-content: center;
+    align-items: center;
 }
 
 .flip-card-back p {
-    align-self: center;
     margin: 15px;
     font-size: 1em;
     max-height: 100%;
