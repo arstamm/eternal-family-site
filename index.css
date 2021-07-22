@@ -1,19 +1,24 @@
-/* General Styles */
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Noto+Serif+JP:wght@400;700&display=swap');
+    /* font-family: 'Noto Serif JP', serif;   font-weight: 400 700; */
+    /* font-family: 'Noto Sans JP', sans-serif; */
 
+/* General Styles */
 body {
-    background-color: #aaaaaa;
+    background-color: #175676;
     margin: 0;
+    font-family: 'Noto Serif JP', serif;
 }
 
 #content {
     max-width: 900px;
-    padding: 30px;
+    padding: 33px 30px;
     margin: 0 auto;
-    background-color: white;
+    background-color: #ffffff;
 }
 
-/* Gradient transparent - color - transparent (from css styles) */
 hr {
+    /* Gradient transparent - color - transparent (from css styles) */
     margin: 30px 0;
     border: 0;
     height: 1px;
@@ -22,11 +27,11 @@ hr {
 
 a {
     text-decoration: none;
-    color: blue;
+    color: #175676;
 }
 
 a:hover {
-    color: lightblue;
+    color: #4ba3c3;
 }
 
 /* Header Styles */
@@ -34,36 +39,39 @@ a:hover {
 header h1 {
     margin: 20px 0;
     font-size: 2em;
+    color: #175676;
 }
 
 nav {
-    align-items: top;
-    padding: 17px 0;
     margin-bottom: 30px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid #175676;
+    border-bottom: 1px solid #175676;
 }
   
 nav ul {
     list-style: none; /* removes the bullets! */
+    padding: 15px;
     margin: auto;
     display: flex;
 }
   
 nav ul li {
-    padding-right: 2.5em;
+    padding-right: 2em;
  }
   
-  nav a{
+  nav a {
     /* font-family: "Over the Rainbow", cursive; */
     font-size: 1.3em;
+    padding: 5px 15px;
     text-transform: uppercase;
-  }
-  
-  nav a:hover {
-    color: #d64727;
+    color: #4ba3c3;
   }
 
+  nav a:hover {
+    color: #cce6f4;
+    background-color: #175676;
+  }
+  
 /* Main Section Styles */
 
 .main-header {
@@ -71,15 +79,21 @@ nav ul li {
 }
 
 .main-header h1 {
-    font-size: 3.5em;
+    font-size: 4.1rem;
+    font-weight: 700;
     margin: 10px 0;
+}
+
+.main-header h2 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
 }
 
 .proclamation-section {
     display: grid;
-    grid-template-columns: 3fr 1fr 3fr;
+    grid-template-columns: 2fr 1fr 2fr;
     column-gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 70px;
 }
 
 .proclamation-section:nth-of-type(even) .flip-card {
@@ -96,12 +110,17 @@ nav ul li {
 }
 
 .proclamation-section:nth-of-type(odd) .section-paragraph {
-    grid-area: 1/1/2/3;   
+    grid-area: 1/1/2/3;
 }
 
 .section-paragraph {
     align-self: center;
-    font-size: 1.3rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.flip-card {
+    align-self: center;
 }
 
 .main-footer p {
@@ -120,10 +139,8 @@ footer p {
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
     background-color: transparent;
-    width: 280px;
-    height: 280px;
-    border: 3px solid rgb(255, 14, 14);
-    border-radius: 20px;
+    width: 290px;
+    height: 290px;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
   
@@ -134,7 +151,6 @@ footer p {
     height: 100%;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    border-radius: 16px;
 }
 
 .flip-card-inner a {
@@ -166,16 +182,17 @@ footer p {
 }
 
 .flip-card-front {
-    background-color: #bbb;
+    /* In case picture does not show up. */
+    background-color: #cce6f4;
     color: black;
     width: inherit;
     height: inherit;
-    border-radius:inherit
+    border-radius: inherit;
 }
   
 /* Style the back side */
 .flip-card-back {
-    background-color: dodgerblue;
+    background-color: #4ba3c3;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -189,13 +206,26 @@ footer p {
 
 .flip-card-back p {
     margin: 15px;
-    font-size: 1em;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .8rem;
     max-height: 100%;
 }
 
+.flip-card-back a {
+    color: #0e2f40;
+}
+
+.flip-card-back a:hover {
+    color: #cce6f4;
+}
+
 @media screen and (max-width: 650px) {
-    .proclamation-section {
+    nav ul, .proclamation-section {
         display: block;
     }
 
+    .flip-card {
+        width: 100%;
+        height: 350px;
+    }
 }
